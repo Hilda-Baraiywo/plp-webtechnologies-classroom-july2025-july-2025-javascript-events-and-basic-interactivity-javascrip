@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Web Experience</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">🌓</button>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>Interactive Web Experience</h1>
+      <p>Discover the power of JavaScript interactivity</p>
+    </header>
+
+    <!-- Part 1: Interactive Counter -->
+    <section class="section">
+      <h2>🎮 Interactive Counter Game</h2>
+      <div class="counter-container">
+        <h3>Click to Count!</h3>
+        <div class="counter-display" id="counterDisplay">0</div>
+        <div class="counter-buttons">
+          <button class="btn btn-success" id="incrementBtn">+ Add 1</button>
+          <button class="btn btn-warning" id="decrementBtn">- Subtract 1</button>
+          <button class="btn btn-primary" id="resetBtn">↻ Reset</button>
+        </div>
+        <p style="margin-top: 1rem; opacity: 0.9;">
+          <span id="clickCount">0</span> total clicks made
+        </p>
+      </div>
+    </section>
+
+    <!-- Part 2: Tabbed Interface -->
+    <section class="section">
+      <h2>📁 Tabbed Content</h2>
+      <div class="tab-container">
+        <div class="tab-buttons">
+          <button class="tab-button active" data-tab="about">About</button>
+          <button class="tab-button" data-tab="features">Features</button>
+          <button class="tab-button" data-tab="contact">Contact</button>
+        </div>
+        <div class="tab-content active" id="about">
+          <h3>About This Project</h3>
+          <p>This interactive web page demonstrates modern JavaScript event handling, DOM manipulation, and user interface patterns. Each section showcases different aspects of web interactivity, from simple click events to complex form validation.</p>
+          <p>Built with vanilla JavaScript, CSS3, and semantic HTML5 for optimal performance and accessibility.</p>
+        </div>
+        <div class="tab-content" id="features">
+          <h3>Key Features</h3>
+          <ul style="margin-left: 2rem; margin-top: 1rem;">
+            <li><strong>Event Handling:</strong> Click, hover, and keyboard events</li>
+            <li><strong>DOM Manipulation:</strong> Dynamic content updates</li>
+            <li><strong>Form Validation:</strong> Real-time input validation</li>
+            <li><strong>Theme Toggle:</strong> Light/dark mode switching</li>
+            <li><strong>Responsive Design:</strong> Mobile-friendly interface</li>
+          </ul>
+        </div>
+        <div class="tab-content" id="contact">
+          <h3>Get In Touch</h3>
+          <p>Have questions about this implementation? Want to learn more about JavaScript interactivity?</p>
+          <p style="margin-top: 1rem;"><strong>Topics covered:</strong> Event listeners, DOM manipulation, form validation, CSS transitions, responsive design, and modern JavaScript patterns.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Part 3: FAQ Section -->
+    <section class="section">
+      <h2>❓ Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What makes this page interactive?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>This page uses JavaScript event listeners to respond to user actions like clicks, form input, and mouse movements.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How does the form validation work?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>The form validation uses regex and custom JavaScript functions to check inputs in real-time.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I use this code in my own projects?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Absolutely! This code demonstrates standard patterns and techniques. Feel free to adapt it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Part 4: Form Validation -->
+    <section class="section">
+      <h2>📋 User Registration Form</h2>
+      <div class="form-container">
+        <form id="registrationForm">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <div class="error-message" id="firstNameError"></div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" required>
+            <div class="error-message" id="lastNameError"></div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" required>
+            <div class="error-message" id="emailError"></div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password *</label>
+            <input type="password" id="password" name="password" required>
+            <div class="error-message" id="passwordError"></div>
+            <small style="opacity: 0.8;">Must be at least 8 characters with uppercase, lowercase, and number</small>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password *</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required>
+            <div class="error-message" id="confirmPasswordError"></div>
+          </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="13" max="120">
+            <div class="error-message" id="ageError"></div>
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country" name="country">
+              <option value="">Select a country</option>
+              <option value="us">United States</option>
+              <option value="uk">United Kingdom</option>
+              <option value="ca">Canada</option>
+              <option value="au">Australia</option>
+              <option value="de">Germany</option>
+              <option value="fr">France</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <button type="submit" class="form-submit" id="submitBtn">Create Account</button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

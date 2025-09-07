@@ -1,3 +1,4 @@
+/* Global Reset & Base Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,8 +8,8 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: var(--bg-color, #f9f9f9);
-  color: var(--text-color, #333);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
   padding: 1rem;
 }
@@ -22,12 +23,13 @@ body {
 .header {
   text-align: center;
   padding: 2rem 1rem;
-  background: var(--header-bg, #007bff);
-  color: white;
+  background: var(--header-bg);
+  color: var(--header-text);
   border-radius: 8px;
   margin-bottom: 2rem;
 }
 
+/* Section */
 .section {
   margin-bottom: 3rem;
 }
@@ -36,8 +38,9 @@ body {
 .counter-container {
   text-align: center;
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
+  background: var(--card-bg);
 }
 
 .counter-display {
@@ -71,23 +74,24 @@ body {
 
 /* Tabs */
 .tab-container {
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
+  background: var(--card-bg);
 }
 
 .tab-buttons {
   display: flex;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .tab-button {
   flex: 1;
   padding: 1rem;
   cursor: pointer;
-  background: #f1f1f1;
+  background: var(--button-bg);
   border: none;
   outline: none;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 
 .tab-button:hover,
@@ -99,6 +103,7 @@ body {
 .tab-content {
   display: none;
   padding: 1rem;
+  color: var(--text-color);
 }
 
 .tab-content.active {
@@ -107,12 +112,13 @@ body {
 
 /* FAQ */
 .faq-container {
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
+  background: var(--card-bg);
 }
 
 .faq-item {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .faq-question {
@@ -120,13 +126,15 @@ body {
   justify-content: space-between;
   padding: 1rem;
   cursor: pointer;
-  background: #f1f1f1;
+  background: var(--button-bg);
+  color: var(--text-color);
 }
 
 .faq-answer {
   display: none;
   padding: 1rem;
-  background: white;
+  background: var(--card-bg);
+  color: var(--text-color);
 }
 
 .faq-answer.show {
@@ -135,9 +143,10 @@ body {
 
 /* Form */
 .form-container {
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1rem;
+  background: var(--card-bg);
 }
 
 .form-group {
@@ -153,12 +162,14 @@ input,
 select {
   width: 100%;
   padding: 0.5rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
+  background: var(--input-bg);
+  color: var(--text-color);
 }
 
 .error-message {
-  color: red;
+  color: #ff4d4d;
   font-size: 0.9rem;
   margin-top: 0.3rem;
 }
@@ -176,7 +187,7 @@ select {
   background-color: #0056b3;
 }
 
-/* Theme Toggle */
+/* Theme Toggle Button */
 .theme-toggle {
   position: fixed;
   top: 1rem;
@@ -190,8 +201,26 @@ select {
   font-size: 1.2rem;
 }
 
+/* Light Theme Variables */
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #333;
+  --header-bg: #007bff;
+  --header-text: #fff;
+  --border-color: #ddd;
+  --card-bg: #fff;
+  --button-bg: #f1f1f1;
+  --input-bg: #fff;
+}
+
+/* Dark Theme Variables */
 body.dark {
   --bg-color: #222;
-  --text-color: #f9f9f9;
+  --text-color: #f1f1f1;
   --header-bg: #444;
+  --header-text: #fff;
+  --border-color: #555;
+  --card-bg: #2a2a2a;
+  --button-bg: #333;
+  --input-bg: #333;
 }
